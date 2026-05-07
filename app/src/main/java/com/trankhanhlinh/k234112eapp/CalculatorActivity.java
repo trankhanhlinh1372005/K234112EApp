@@ -87,7 +87,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     }
 
                     //step 6: show result
-                    edtFormula.setText(result);
+                    edtFormula.setText(result) ;
                 }
                 catch (Exception ex)
                 {
