@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText editPassword;
     TextView txtMessage;
     CheckBox chkSaveLogin;
+    RadioButton radAdmin;
+    RadioButton radEmployee;
 
     String name_share_pref="LoginInfo";
 
@@ -46,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         txtMessage = findViewById(R.id.txtMessage);
         chkSaveLogin= findViewById(R.id.chkSaveLogin);
+        radAdmin=findViewById(R.id.radAdmin);
+        radEmployee=findViewById(R.id.radEmployee);
     }
     public void loginSystem(View view) {
         String username= editUsername.getText().toString();
@@ -62,8 +67,16 @@ public class LoginActivity extends AppCompatActivity {
             editor.commit();
 
             txtMessage.setText(getString(R.string.str_login_successful));
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            if(radAdmin.isChecked()){
+                //dĩ nhiên ta phải kiểm tra account này có quyền admin hay ko (tính sau)
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+            else
+            {
+                Intent intent = new Intent(LoginActivity.this, EmployeeManagementActivity.class);
+                startActivity(intent);
+            }
         }
         else
         {

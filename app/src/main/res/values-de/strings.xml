@@ -22,4 +22,8 @@
     <string name="str_ms">MS</string>
     <string name="str_m">M</string>
     <string name="str_open_calculator_app">Open calculator App</string>
+    <string name="str_save_login_infor">Save Login Information</string>
+    <string name="str_login_role">Login Role</string>
+    <string name="str_role_admin">Administrator</string>
+    <string name="str_role_employee">Employee</string>
 </resources>

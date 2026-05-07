@@ -10,7 +10,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="210dp" />
+        android:layout_height="173dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -62,6 +62,34 @@
         android:hint="@string/str_hint_password"
         android:inputType="text"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_login_role"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_role_admin"
+            android:textColor="#FFEB3B" />
+
+        <RadioButton
+            android:id="@+id/radEmployee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_role_employee"
+            android:textColor="#FFEB3B" />
+    </RadioGroup>
 
     <CheckBox
         android:id="@+id/chkSaveLogin"
