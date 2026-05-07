@@ -59,6 +59,63 @@ public class CalculatorActivity extends AppCompatActivity {
                 //step 2: invoke library for formular (find internet)...
                 String result="";
                 //result=library_nào_đó(formular)
+                try
+                {
+                    //phép cộng
+                    if(formular.contains("+"))
+                    {
+                        String arr[]=formular.split("\\+");
+
+                        double a=Double.parseDouble(arr[0]);
+                        double b=Double.parseDouble(arr[1]);
+
+                        result=(a+b)+"";
+                    }
+
+                    //phép trừ
+                    else if(formular.contains("-"))
+                    {
+                        String arr[]=formular.split("-");
+
+                        double a=Double.parseDouble(arr[0]);
+                        double b=Double.parseDouble(arr[1]);
+
+                        result=(a-b)+"";
+                    }
+
+                    //phép nhân
+                    else if(formular.contains("*"))
+                    {
+                        String arr[]=formular.split("\\*");
+
+                        double a=Double.parseDouble(arr[0]);
+                        double b=Double.parseDouble(arr[1]);
+
+                        result=(a*b)+"";
+                    }
+
+                    //phép chia
+                    else if(formular.contains("/"))
+                    {
+                        String arr[]=formular.split("/");
+
+                        double a=Double.parseDouble(arr[0]);
+                        double b=Double.parseDouble(arr[1]);
+
+                        if(b==0)
+                        {
+                            result="Cannot divide by 0";
+                        }
+                        else
+                        {
+                            result=(a/b)+"";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result="Error";
+                }
                 //step 3:
                 edtFormula.setText(result);
             }

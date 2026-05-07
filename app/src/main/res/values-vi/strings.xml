@@ -26,4 +26,9 @@
     <string name="str_login_role">Login Role</string>
     <string name="str_role_admin">Administrator</string>
     <string name="str_role_employee">Employee</string>
+    <string name="str_confirm">Xác định thoát</string>
+    <string name="str_message_confirm">Mún thoát hở??</string>
+    <string name="str_positive">CÓOOO</string>
+    <string name="str_negative">kHÔNGG</string>
+
 </resources>

@@ -1,5 +1,6 @@
 package com.trankhanhlinh.k234112eapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -85,7 +87,27 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void Exit(View view) {
-        finish();
+        //finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        builder.setTitle(getString(R.string.str_confirm)); //hình như là sai ròi
+        builder.setMessage(getString(R.string.str_message_confirm));
+        builder.setIcon(android.R.drawable.ic_dialog_alert); //confirm trc khi out ra
+        builder.setPositiveButton(getString(R.string.str_positive), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                finish();
+            }
+        });
+        builder.setNegativeButton(getString(R.string.str_negative), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog=builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
     }
 
     @Override
