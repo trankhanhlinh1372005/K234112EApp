@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">K234112EApp</string>
+    <string name="str_welcome">Xin chào K234112E</string>
+    <string name="str_say_hello">HELLO K234112E</string>v
+    <string name="str_clickme_to_say_hello">Nói xin chào</string>
+    <string name="str_login_System">đăng nhập</string>
+    <string name="str_user_name">tên đăng nhập</string>
+    <string name="str_hint_username">Enter your username</string>
+    <string name="str_password">Password:</string>
+    <string name="str_hint_password">Enter your password</string>
+    <string name="str_login">Login</string>
+    <string name="str_Exit">Exit</string>
+    <string name="str_login_successful">đăng nhập thành công</string>
+    <string name="str_login_failed">đăng nhập thất bại</string>
+    <string name="str_exit">thoát</string>
+    <string name="str_message">Lời nhắn</string>
+    <string name="str_mc">MC</string>
+    <string name="str_mr">MR</string>
+    <string name="str_mplus">M+</string>
+    <string name="str_mminus">M-</string>
+    <string name="str_ms">MS</string>
+    <string name="str_m">M</string>
+    <string name="str_open_calculator_app">Open calculator App</string>
+    <string name="str_save_login_infor">Save Login Information</string>
+</resources>
