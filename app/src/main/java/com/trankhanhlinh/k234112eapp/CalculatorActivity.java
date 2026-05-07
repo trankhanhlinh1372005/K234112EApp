@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 
 public class CalculatorActivity extends AppCompatActivity {
@@ -61,63 +63,36 @@ public class CalculatorActivity extends AppCompatActivity {
                 //result=library_nào_đó(formular)
                 try
                 {
-                    //phép cộng
-                    if(formular.contains("+"))
+                    //step 2: replace special symbols
+                    formular=formular.replace("×","*");
+                    formular=formular.replace("÷","/");
+
+                    //step 3: build expression
+                    Expression expression =
+                            new ExpressionBuilder(formular)
+                                    .build();
+
+                    //step 4: calculate result
+                    double value = expression.evaluate();
+
+                    //step 5: remove .0 if integer
+
+                    if(value == (long)value)
                     {
-                        String arr[]=formular.split("\\+");
-
-                        double a=Double.parseDouble(arr[0]);
-                        double b=Double.parseDouble(arr[1]);
-
-                        result=(a+b)+"";
+                        result = String.valueOf((long)value);
+                    }
+                    else
+                    {
+                        result = String.valueOf(value);
                     }
 
-                    //phép trừ
-                    else if(formular.contains("-"))
-                    {
-                        String arr[]=formular.split("-");
-
-                        double a=Double.parseDouble(arr[0]);
-                        double b=Double.parseDouble(arr[1]);
-
-                        result=(a-b)+"";
-                    }
-
-                    //phép nhân
-                    else if(formular.contains("*"))
-                    {
-                        String arr[]=formular.split("\\*");
-
-                        double a=Double.parseDouble(arr[0]);
-                        double b=Double.parseDouble(arr[1]);
-
-                        result=(a*b)+"";
-                    }
-
-                    //phép chia
-                    else if(formular.contains("/"))
-                    {
-                        String arr[]=formular.split("/");
-
-                        double a=Double.parseDouble(arr[0]);
-                        double b=Double.parseDouble(arr[1]);
-
-                        if(b==0)
-                        {
-                            result="Cannot divide by 0";
-                        }
-                        else
-                        {
-                            result=(a/b)+"";
-                        }
-                    }
+                    //step 6: show result
+                    edtFormula.setText(result);
                 }
                 catch (Exception ex)
                 {
-                    result="Error";
+                    edtFormula.setText(getString(R.string.str_error));
                 }
-                //step 3:
-                edtFormula.setText(result);
             }
         });
 

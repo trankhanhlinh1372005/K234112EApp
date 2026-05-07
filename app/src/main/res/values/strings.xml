@@ -29,5 +29,8 @@
     <string name="str_message_confirm">EXIT?</string>
     <string name="str_positive">YASSS</string>
     <string name="str_negative">NOO</string>
+    <string name="str_error">ERROR</string>
+
+
 
 </resources><!-- CÓ BNH CHUỖI LÀ THÊM BẤY NHIÊU CHỨ HK HẢD CODE -->

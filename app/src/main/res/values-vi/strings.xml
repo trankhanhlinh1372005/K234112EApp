@@ -30,5 +30,6 @@
     <string name="str_message_confirm">Mún thoát hở??</string>
     <string name="str_positive">CÓOOO</string>
     <string name="str_negative">kHÔNGG</string>
+    <string name="str_error">LỖI!!</string>
 
 </resources>
