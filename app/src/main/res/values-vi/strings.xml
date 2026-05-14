@@ -31,5 +31,11 @@
     <string name="str_positive">CÓOOO</string>
     <string name="str_negative">kHÔNGG</string>
     <string name="str_error">LỖI!!</string>
+    <string name="str_employee_id">EMployee ID:</string>
+    <string name="str_employee_name">Employee Name:</string>
+    <string name="str_phone">Phone Number:</string>
+    <string name="str_save">Save</string>
+    <string name="str_Delete">Delete</string>
+    <string name="str_confirm_exit">Are you sure? You want to exit?</string>
 
 </resources>
